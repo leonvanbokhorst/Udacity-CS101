@@ -1,4 +1,4 @@
-# Credit goes to Websten from forums
+# Credit goes to Websten from forums / Udacity
 #
 # Use Dave's suggestions to finish your daysBetweenDates
 # procedure. It will need to take into account leap years
