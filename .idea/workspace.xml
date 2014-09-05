@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4dd45afc-e175-4f57-9138-b63f85f0112c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Documenten\PycharmProjects\Udacity-CS01\CurrentSketch.py" afterPath="$PROJECT_DIR$/CS01-Lesson3-Crawler-Final.py" />
     </list>
     <ignored path="Udacity-CS01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -383,7 +382,11 @@
       <created>1409937819678</created>
       <updated>1409937819678</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Leeson 3 (How to manage data) final">
+      <created>1409938895325</created>
+      <updated>1409938895325</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
