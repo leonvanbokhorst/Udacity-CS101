@@ -25,8 +25,7 @@ def get_year_data(year):
         return leap_year, leap_year_total
 
 
-
-def daysBetweenDates(year1, month1, day1, year2, month2, day2):
+def days_between_dates(year1, month1, day1, year2, month2, day2):
     current_year = year1
     current_month = month1
     current_day = day1
@@ -70,15 +69,9 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
 # Test routine
 
 def test():
-    # DONE ((2012, 1, 1, 2012, 2, 28), 58),
-    # ((2012, 1, 1, 2012, 3, 1), 60),
-    #
-    # TQDO # , ((2011, 1, 1, 2012, 8, 8), 585 ),
-    # ((1900, 1, 1, 1999, 12, 31), 36523)
-    # ((2011, 6, 30, 2012, 6, 30), 366)
     test_cases = [((2011, 6, 30, 2012, 6, 30), 366)]
     for (args, answer) in test_cases:
-        result = daysBetweenDates(*args)
+        result = days_between_dates(*args)
         if result != answer:
             print("Test with data:", args, answer, "failed with result " + str(result))
         else:

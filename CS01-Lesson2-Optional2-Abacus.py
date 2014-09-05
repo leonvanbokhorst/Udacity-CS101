@@ -1,5 +1,5 @@
 # ########################################################################
-#                 10-row School abacus
+# 10-row School abacus
 #                         by
 #                      Michael H
 #########################################################################
@@ -42,12 +42,9 @@
 def print_abacus(value):
     factor = 1000000000
     while factor >= 1:
-        print('|' + '00000*****'[0:10 - (value % (factor * 10)/factor)] + '   ' + '00000*****'[10 - (value % (factor * 10)/factor):] + '|')
+        print('|' + '00000*****'[0:10 - (value % (factor * 10) / factor)] + '   ' + '00000*****'[10 - (
+        value % (factor * 10) / factor):] + '|')
         factor /= 10
-
-
-
-
 
 
 ###  TEST CASES
