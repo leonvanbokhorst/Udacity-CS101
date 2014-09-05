@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dd45afc-e175-4f57-9138-b63f85f0112c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CurrentSketch.py" afterPath="$PROJECT_DIR$/CurrentSketch.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udacity-CS01.iws" />
@@ -375,7 +374,11 @@
       <created>1409927432627</created>
       <updated>1409927432628</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cleanup">
+      <created>1409937794615</created>
+      <updated>1409937794615</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
