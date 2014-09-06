@@ -19,66 +19,129 @@
 # A valid sudoku square satisfies these
 # two properties:
 
-#   1. Each column of the square contains
-#       each of the whole numbers from 1 to n exactly once.
+# 1. Each column of the square contains
+# each of the whole numbers from 1 to n exactly once.
 
-#   2. Each row of the square contains each
-#       of the whole numbers from 1 to n exactly once.
+# 2. Each row of the square contains each
+# of the whole numbers from 1 to n exactly once.
 
 # You may assume the the input is square and contains at
 # least one row and column.
 
-correct = [[1,2,3],
-           [2,3,1],
-           [3,1,2]]
 
-incorrect = [[1,2,3,4],
-             [2,3,1,3],
-             [3,1,2,3],
-             [4,4,4,4]]
-
-incorrect2 = [[1,2,3,4],
-             [2,3,1,4],
-             [4,1,2,3],
-             [3,4,1,2]]
-
-incorrect3 = [[1,2,3,4,5],
-              [2,3,1,5,6],
-              [4,5,2,1,3],
-              [3,4,5,2,1],
-              [5,6,4,3,2]]
-
-incorrect4 = [['a','b','c'],
-              ['b','c','a'],
-              ['c','a','b']]
-
-incorrect5 = [ [1, 1.5],
-               [1.5, 1]]
-               
-def check_sudoku():
-    
+def inrange(num, rowlen):
+    """
+    Checks if the number is within a range from one to rowlen
+    :param num: the number to check
+    :param rowlen: the max range
+    :return: True if within the range, False otherwise
+    """
+    return rowlen >= num > 0
 
 
+def check_row(row):
+    """
+    Checks an array for Sudoku succes
+    :param row: the array
+    :return: True if all numbers are in range and occur only ones
+    """
+    usednum = []
+    rowlen = len(row)
+
+    for num in row:
+        if num in usednum or not inrange(num, rowlen) or not isinstance(num, int):
+            return False
+        usednum.append(num)
+
+    return True
 
 
-    
-    
-#print check_sudoku(incorrect)
-#>>> False
+def getcols(board):
+    """
+    Get all the columns on the board
+    :param board: the Board
+    :return: list of columnlists
+    """
+    collen = len(board[0])
+    result = []
+    colcounter = 0
 
-#print check_sudoku(correct)
-#>>> True
+    while colcounter < collen:
+        rowcounter = 0
+        col = []
 
-#print check_sudoku(incorrect2)
-#>>> False
+        while rowcounter < collen:
+            col.append(board[rowcounter][colcounter])
+            rowcounter += 1
+        result.append(col)
+        colcounter += 1
 
-#print check_sudoku(incorrect3)
-#>>> False
+    return result
 
-#print check_sudoku(incorrect4)
-#>>> False
 
-#print check_sudoku(incorrect5)
-#>>> False
+def check_sudoku(board):
+    """
+    Checks if the board has a valid sudoku configuration
+    :param board:
+    :return: True if board is a valid sudoku config, otherwise False
+    """
+    for row in board:
+        if not check_row(row):
+            return False
+
+    cols = getcols(board)
+
+    for col in cols:
+        if not check_row(col):
+            return False
+
+    return True
+
+
+# tests
+correct = [[1, 2, 3],
+           [2, 3, 1],
+           [3, 1, 2]]
+
+incorrect = [[1, 2, 3, 4],
+             [2, 3, 1, 3],
+             [3, 1, 2, 3],
+             [4, 4, 4, 4]]
+
+incorrect2 = [[1, 2, 3, 4],
+              [2, 3, 1, 4],
+              [4, 1, 2, 3],
+              [3, 4, 1, 2]]
+
+incorrect3 = [[1, 2, 3, 4, 5],
+              [2, 3, 1, 5, 6],
+              [4, 5, 2, 1, 3],
+              [3, 4, 5, 2, 1],
+              [5, 6, 4, 3, 2]]
+
+incorrect4 = [['a', 'b', 'c'],
+              ['b', 'c', 'a'],
+              ['c', 'a', 'b']]
+
+incorrect5 = [[1, 1.5],
+              [1.5, 1]]
+
+print check_sudoku(incorrect)
+# >>> False
+
+print check_sudoku(correct)
+# >>> True
+
+print check_sudoku(incorrect2)
+# >>> False
+
+print check_sudoku(incorrect3)
+# >>> False
+
+print check_sudoku(incorrect4)
+# >>> False
+
+print check_sudoku(incorrect5)
+# >>> False
 
 
