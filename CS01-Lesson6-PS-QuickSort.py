@@ -276,7 +276,7 @@ def compute_ranks(graph):
             newrank = (1 - d) / npages
             for node in graph:
                 if page in graph[node]:
-                    newrank = newrank + d * (ranks[node] / len(graph[node]))
+                    newrank += d * (ranks[node] / len(graph[node]))
             newranks[page] = newrank
         ranks = newranks
     return ranks

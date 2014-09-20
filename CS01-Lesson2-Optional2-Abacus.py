@@ -1,6 +1,6 @@
 # ########################################################################
 # 10-row School abacus
-#                         by
+# by
 #                      Michael H
 #########################################################################
 #       Description partially extracted from from wikipedia 
@@ -39,11 +39,12 @@
 # 3 STARS: 3 < lines <= 6
 # 4 STARS: 0 < lines <= 3
 
+
 def print_abacus(value):
     factor = 1000000000
     while factor >= 1:
         print('|' + '00000*****'[0:10 - (value % (factor * 10) / factor)] + '   ' + '00000*****'[10 - (
-        value % (factor * 10) / factor):] + '|')
+            value % (factor * 10) / factor):] + '|')
         factor /= 10
 
 

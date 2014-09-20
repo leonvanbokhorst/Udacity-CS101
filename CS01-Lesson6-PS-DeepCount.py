@@ -43,5 +43,3 @@ print deep_count([1, [1, 2, [3, 4]]])
 
 print deep_count([[[[[[[[1, 2, 3]]]]]]]])
 #>>> 10
-
- 

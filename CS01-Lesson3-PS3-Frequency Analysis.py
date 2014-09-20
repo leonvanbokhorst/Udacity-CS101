@@ -57,12 +57,12 @@ def freq_analysis(message):
     parse(message, table)
 
     for item in table:
-        foundItem = find(item[0], alphabet)
+        founditem = find(item[0], alphabet)
 
-        if len(foundItem) == 0:
+        if len(founditem) == 0:
             continue
 
-        foundItem[1] = (item[1] + 0.0) / msglen
+        founditem[1] = (item[1] + 0.0) / msglen
 
     for item in alphabet:
         result.append(item[1])
